@@ -704,10 +704,12 @@ int main(){
     //insertion
     // insertion(x_h, n);
     // show_array(x_h, n);
-    Complex z1(2 ,3);
-    Complex z2(3, 4);
-    Complex z = z1 + z2;
-    z.showComplex();
+    // Complex z1(2 ,3);
+    // Complex z2(3, 4);
+    // Complex z = z1 + z2;
+    // z.showComplex();
+
+    
 
     return 0;
 }
