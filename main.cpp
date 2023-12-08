@@ -187,6 +187,35 @@ void insertion(int (&x)[50], int n){
     }
 }
 
+class Complex {
+    private: 
+        int re;
+        int im;
+    public:
+   Complex(){
+        this->re = 0;
+        this->im = 0;
+    }
+   Complex(int x, int y){
+        this->re = x;
+        this->im = y;
+    }
+
+    void showComplex(){
+        cout << this->re << endl;
+        cout << this->im << endl;
+    }
+    friend Complex operator+(Complex z1, Complex z2);
+};
+
+Complex operator+(Complex z1, Complex z2){
+    Complex z;
+    z.re = z1.re + z2.re;
+    z.im = z1.im + z2.im;
+    return z;
+}   
+
+
 int main(){
 
     // float/int
@@ -675,7 +704,10 @@ int main(){
     //insertion
     // insertion(x_h, n);
     // show_array(x_h, n);
-    
+    Complex z1(2 ,3);
+    Complex z2(3, 4);
+    Complex z = z1 + z2;
+    z.showComplex();
 
     return 0;
 }
