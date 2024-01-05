@@ -192,11 +192,11 @@ class Complex {
         int re;
         int im;
     public:
-   Complex(){
+    Complex(){
         this->re = 0;
         this->im = 0;
     }
-   Complex(int x, int y){
+    Complex(int x, int y){
         this->re = x;
         this->im = y;
     }
@@ -215,6 +215,20 @@ Complex operator+(Complex z1, Complex z2){
     return z;
 }   
 
+void revString(char (&s)[50]){
+    int i=0;
+    while (s[i]!='\0'){
+        i++;
+    };
+    int n = i - 1;
+    i = 0;
+    while (i <= n/2){
+        char temp = s[i];
+        s[i] = s[n-i];
+        s[n-i] = temp;
+        i++;
+    }
+}
 
 int main(){
 
@@ -637,7 +651,7 @@ int main(){
     // }
     // cout << s << endl;
 
-    //sqrroot
+    // sqrroot
     // float x;
     // float g;
     // float h;
@@ -704,12 +718,17 @@ int main(){
     //insertion
     // insertion(x_h, n);
     // show_array(x_h, n);
+    
     // Complex z1(2 ,3);
     // Complex z2(3, 4);
     // Complex z = z1 + z2;
     // z.showComplex();
 
-    
+    //function for reversing string
+    // char s[50];
+    // cin >> s;
+    // revString(s);
+    // cout << s << endl;
 
     return 0;
 }
