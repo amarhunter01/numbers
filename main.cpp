@@ -10,7 +10,7 @@ void show_array(int x[50], int n = 50){
     }
     cout << "End of array" << endl;
 }
-void show_matrix(int x[50][50], int n = 50, int m = 50){
+void show_matrix(int x[][50], int n = 50, int m = 50){
     int i;
     int j;
     i = 0;
@@ -227,6 +227,54 @@ void revString(char (&s)[50]){
         s[i] = s[n-i];
         s[n-i] = temp;
         i++;
+    }
+}
+
+int vet(int x[][50], int n, int &max_1, int &max_2, int max_i_1, int max_i_2){
+    //function to find 2 biggest verticals and to check if there is a link between them 
+    int i;
+    int j;
+    int k;
+    int sum;
+    int x_i[50];
+    k = 0;
+    while (k<=n){
+        sum = 0;
+        i = 0;
+        while(i <= n){
+            if(x[k][i] != 0){
+                sum++;
+            }
+            if(x[i][k] != 0){
+                sum++;
+            }
+        }
+        x_i[k] = sum;
+        i++;
+    }
+    max_i_1 = 1;
+    max_i_2 = 2;
+    max_1 = x_i[1];
+    max_2 = x_i[2];
+    i = 0;
+    while (i<=n){
+        if (max_2 < x_i[i]){
+            if(max_1 <= x_i[i]){
+                max_2 = max_1;
+                max_i_2 = max_i_1;
+                max_1 = x_i[i];
+                max_i_1 = i;
+            }else {
+                max_2 = x_i[i];
+                max_i_2 = i;
+            }
+        }
+    }
+
+    if(x[max_i_1][max_i_2] != 0 || x[max_i_2][max_i_1] != 0  ){
+        return 1;
+    }else {
+        return -1;
     }
 }
 
@@ -707,7 +755,7 @@ int main(){
     // rep_min(x_h, n);
     // show_array(x_h, n);
 
-    //quick sort
+    // quick sort
     // quick_sort(x_u, 0, n);
     // show_array(x_u, n);
     
