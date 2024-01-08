@@ -778,5 +778,30 @@ int main(){
     // revString(s);
     // cout << s << endl;
 
+    //for graph
+    // int n;
+    // cin >> n;
+    // int x[50][50];
+    // int i = 1;
+    // int max_1;
+    // int max_2;
+    // int max_i_1;
+    // int max_i_2;
+    // while(i <= n){
+    //     int j = 1;
+    //     while(j <= n){
+    //         cin >> x[i][j];
+    //         j++;
+    //     }
+    //     i++;
+    // }
+    // cout << vet(x, n, max_1, max_2, max_i_1, max_i_2) << endl;
+    // cout << "Max_1: " + max_1 << endl;
+    // cout << "Max_2: " + max_2 << endl;
+    // cout << "Max_i_1: " + max_i_1 << endl;
+    // cout << "Max_i_2: " + max_i_2 << endl;
+
+
+
     return 0;
 }
